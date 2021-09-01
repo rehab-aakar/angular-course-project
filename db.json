@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Pr-2",
+      "price": 200,
+      "quantity": 2,
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": 2,
+      "name": "Pr-2",
+      "price": 200,
+      "quantity": "3",
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": 3,
+      "name": "pro",
+      "price": "123",
+      "quantity": "7",
+      "selected": false,
+      "available": true
+    },
+    {
+      "name": "AA",
+      "price": "034",
+      "quantity": "044",
+      "selected": false,
+      "available": false,
+      "id": 4
+    },
+    {
+      "name": "hhh",
+      "price": 0,
+      "quantity": 0,
+      "selected": true,
+      "available": true,
+      "id": 5
+    }
+  ]
+}
