@@ -3,7 +3,7 @@ import { Observable, of } from 'rxjs';
 import { Product } from 'src/app/model/product.model';
 import { ProductService } from 'src/app/service/product.service';
 import {catchError ,map , startWith} from 'rxjs/operators';
-import { AppDataState, DataStateEnum } from 'src/app/state/product.state';
+import { ActionEvent, AppDataState, DataStateEnum, ProductActionsTypes } from 'src/app/state/product.state';
 import { Router } from '@angular/router';
 
 @Component({
@@ -88,6 +88,25 @@ export class ProductComponent implements OnInit {
 
   OnView(p : Product){
     this.router.navigateByUrl("/view/"+p.id);
+  }
+
+  onActionEvent($event : ActionEvent){
+    //console.log($event)
+    /*if($event="All_Products"){
+      this.GetAllProducts();
+    }*/
+    switch($event.type){
+      case ProductActionsTypes.Get_All_Products : this.GetAllProducts();break;
+      case ProductActionsTypes.Get_Selected_Products : this.GetSelectedProducts();break;
+      case ProductActionsTypes.Get_Available_Products : this.GetAvailableProducts();break;
+      case ProductActionsTypes.Add_Product : this.AddProduct();break;
+      case ProductActionsTypes.Search_Products: this.GetProductsByName($event.payload);break;
+      case ProductActionsTypes.Select_Product: this.OnSelect($event.payload);break;
+      case ProductActionsTypes.Edit_Product: this.OnEdit($event.payload);break;
+      case ProductActionsTypes.View_Product: this.OnView($event.payload);break;
+      case ProductActionsTypes.Delete_Product: this.OnDelete($event.payload);break;
+
+    }
   }
 
   
