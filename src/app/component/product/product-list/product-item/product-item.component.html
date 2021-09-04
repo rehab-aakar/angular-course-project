@@ -6,24 +6,24 @@
     <td>{{product.selected}}</td>
     <td>{{product.available}}</td>
     <td>
-        <button (click)="OnSelect(product)" [ngClass]="product.selected?'btn-success':'btn-danger'" class="btn-sm">
-            <span *ngIf="product.selected" style="color:black;">Unselected</span>
-            <span *ngIf="!product.selected" style="color:black;">Selected</span>
+        <button (click)="OnSelect(product)" [ngClass]="product.selected?'btn-success':'btn-dark'" class="btn-sm">
+            <span *ngIf="product.selected" >Unselected</span>
+            <span *ngIf="!product.selected" >Selected</span>
         </button>
     </td>
     <td>
         <button class="btn btn-danger" (click)="OnDelete(product)">
-            <span class="fa fa-trash-o" style="color:black;"></span>
+            <span class="fa fa-trash-o" ></span>
         </button>
     </td>
     <td>
-        <button class="btn btn-danger" (click)="OnEdit(product)">
-            <span class="fa fa-edit" style="color:black;"></span>
+        <button class="btn btn-warning" (click)="OnEdit(product)">
+            <span class="fa fa-edit" style="color:white;"></span>
         </button>
     </td>
     <td>
-        <button class="btn btn-danger" (click)="OnView(product)">
-            <span class="fa fa-eye" style="color:black;"></span>
+        <button class="btn btn-primary" (click)="OnView(product)">
+            <span class="fa fa-eye" ></span>
         </button>
     </td>
 </tr>
